@@ -32,7 +32,7 @@
 	
 	<div class="container">
 		<div class="header">
-			<h1 class="col-12 mt-4 mb-4">Pulsar Login</h1>
+			<h1 class="col-12 mt-4 mb-4">Pulsar Register</h1>
 		</div>
 	</div>
 	
@@ -43,26 +43,24 @@
 				</div>
 			</div>
 		
-			<div class="form-group">
+  			<div class="form-group">
     			<label for="username">Username</label>
     			<input type="text" class="form-control" id="username" name="username" required>
     			<div class="valid-feedback"></div>
-    			<div class="invalid-feedback">Please enter username </div>
-  			</div>
-  			<div class="form-group">
-    			<label for="uname">Email</label>
-    			<input type="email" class="form-control" id="uname" name="uname" required>
-    			<div class="valid-feedback"></div>
-    			<div class="invalid-feedback">Please enter email</div>
+    			<div class="invalid-feedback">Please enter username</div>
   			</div>
   			<div class="form-group">
     			<label for="pwd"> Password </label>
-    			<input type="password" class="form-control" id="pwd" name="pwd" required>
+    			<input type="password" class="form-control" id="pwd" name="pwd" onfocusout="md5hash()" required>
     			<div class="valid-feedback"></div>
     			<div class="invalid-feedback">Please enter password</div>
   			</div>
   			<button id = "clickLogin" type="submit" class="btn btn-dark">Register</button>
 		</form>
+		
+		<form action = "Login.jsp" method = "GET" class = "needs-validation">
+  			<button id = "clickLogin" type="submit" class = "btn btn-light">Go back to Login</button>
+  		</form>
 	</div>
 	
 	<script>
@@ -84,6 +82,16 @@
 	    });
 	  }, false);
 	})();
+	</script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+	<script>
+		function md5hash() {
+			var pwd = document.getElementById("pwd");
+		    var hashed_pwd = CryptoJS.MD5(pwd).toString();
+			pwd.value = hashed_pwd;
+		}
 	</script>
 	
 </body>

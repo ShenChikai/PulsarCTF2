@@ -33,7 +33,7 @@
 	</div>
 	
 	<div class="container">
-		<form action="Login.jsp" method="GET" class="needs-validation" novalidate>
+		<form action="LoginValidate.jsp" method="GET" class="needs-validation" novalidate>
 			<div class="row mb-3">
 				<div class="font-italic text-danger col-sm-9 ml-sm-auto">
 				</div>
@@ -47,7 +47,7 @@
   			</div>
   			<div class="form-group">
     			<label for="pwd"> Password </label>
-    			<input type="password" class="form-control" id="pwd" name="pwd" required>
+    			<input type="password" class="form-control" id="pwd" name="pwd" onfocusout="md5hash()" required>
     			<div class="valid-feedback"></div>
     			<div class="invalid-feedback">Please enter password</div>
   			</div>
@@ -82,6 +82,14 @@
 	})();
 	</script>
 
-  
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+	<script>
+		function md5hash() {
+			var pwd = document.getElementById("pwd");
+		    var hashed_pwd = CryptoJS.MD5(pwd).toString();
+			pwd.value = hashed_pwd;
+		}
+	</script>
 </body>
 </html>
