@@ -34,6 +34,9 @@
 		<div class="header">
 			<h1 class="col-12 mt-4 mb-4">Pulsar Register</h1>
 		</div>
+		<div>
+			<img  class="col-12 mt-4 mb-4" src="https://www.sciencealert.com/images/2020-03/processed/pulsar_topic_1024.jpg" alt="pulsar img">
+		</div>
 	</div>
 	
 	<div class="container">
@@ -58,7 +61,7 @@
   			<button id = "clickLogin" type="submit" class="btn btn-dark">Register</button>
 		</form>
 		
-		<form action = "Login.jsp" method = "GET" class = "needs-validation">
+		<form action = "Login.html" method = "GET" class = "needs-validation">
   			<button id = "clickLogin" type="submit" class = "btn btn-light">Go back to Login</button>
   		</form>
 	</div>

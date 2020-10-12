@@ -37,7 +37,7 @@
 	// check if username / email existed
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://52.53.193.89:3306/ctf2?user=root&password=root");
+		conn = DriverManager.getConnection("jdbc:mysql://3.101.135.105:3306/ctf2?user=root&password=root");
 		st = conn.createStatement();
 		// check username
 		sql = "SELECT * FROM userinfo WHERE username='" + username + "'";		
@@ -50,7 +50,7 @@
 		   		<font color="red"><strong> Going to Fail page now. </strong></font><br />
 		  		<script>
 		  			setTimeout(function(){
-		  				var uri = "/CTF2/Login.jsp";
+		  				var uri = "/CTF2/Fail.jsp";
 				        location.href = uri;
 		  			}, 100);
 		  		</script>
@@ -87,7 +87,7 @@
 		   		<font color="green"><strong> Going to SUCCESS page now. </strong></font><br />
 		  		<script>
 		  			setTimeout(function(){
-		  				var uri = "/CTF2/Login.jsp";
+		  				var uri = "/CTF2/Success.jsp";
 				        location.href = uri;
 		  			}, 100);
 		  		</script>
@@ -99,7 +99,7 @@
 		   		<font color="red"><strong> Going to Fail page now. </strong></font><br />
 		  		<script>
 		  			setTimeout(function(){
-		  				var uri = "/CTF2/Login.jsp";
+		  				var uri = "/CTF2/Fail.jsp";
 				        location.href = uri;
 		  			}, 100);
 		  		</script>

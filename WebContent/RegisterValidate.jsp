@@ -29,7 +29,7 @@
 	// check if username existed
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://52.53.193.89:3306/ctf2?user=root&password=root");
+		conn = DriverManager.getConnection("jdbc:mysql://3.101.135.105:3306/ctf2?user=root&password=root");
 		st = conn.createStatement();
 		// check username
 		sql = "SELECT * FROM userinfo WHERE username='" + username + "'";		
@@ -75,7 +75,7 @@
 	if(validFlag) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SalEats?user=root&password=root");
+			conn = DriverManager.getConnection("jdbc:mysql://3.101.135.105:3306/SalEats?user=root&password=root");
 			st = conn.createStatement();
 			sql = "INSERT INTO userinfo (username, email, pw) " + "VALUES ('" + username + "', '" + pwd + "')";		
 			st.executeUpdate(sql);
@@ -104,7 +104,7 @@
 	  		<font color="green"><strong> Going back to Login in 3 seconds. </strong></font><br />
 	  		<script>
 	  			setTimeout(function(){
-	  				var uri = "/CTF2/Login.jsp";
+	  				var uri = "/CTF2/Login.html";
 			        location.href = uri;
 	  			}, 3000);
 	  		</script>
